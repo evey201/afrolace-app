@@ -53,7 +53,7 @@ class signIn extends Component {
               style={styles.inputStyle}
               placeholder="Email"
               value={this.state.email}
-              onChangeText={(value) => this.updateInputValue(value, 'email')}
+              onChangeText={(text) => this.updateInputValue(text, 'email')}
             />
             <TextInput
               style={styles.inputStyle}

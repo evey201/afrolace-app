@@ -5,15 +5,15 @@ import signIn from '../screens/signinScreen';
 import signUp from "../screens/signupScreen";
 
 const screens = {
-    Home: {
-        screen: Home
+    SignUp: {
+        screen: signUp
     },
     SignIn: {
         screen: signIn
     },
-    SignUp: {
-        screen: signUp
-    }
+    Home: {
+        screen: Home
+    },
 }
 
 const HomeStack = createStackNavigator(screens);
