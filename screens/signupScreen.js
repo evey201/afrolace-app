@@ -44,7 +44,7 @@ signUpUser = () => {
         email: '', 
         password: ''
       })
-      this.props.navigation.navigate('Login')
+      this.props.navigation.navigate('SignIn')
     })
     .catch(error => this.setState({ errorMessage: error.message }))      
   }
