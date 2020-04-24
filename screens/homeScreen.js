@@ -1,21 +1,62 @@
 import React, { Component } from 'react';
-import { View, Text, Button } from 'react-native';
+import { StyleSheet, View, Text, Button } from 'react-native';
+import firebase from '../firebase/firebase.utils';
 
-export default function Home({ navigation }) {
-    const pressHandler = () => {
-        navigation.navigate('SignIn');
+
+
+class Home extends Component {
+    constructor() {
+        super();
+    
+        this.state = {
+            uid: ''
+        }
     }
 
-    const pressHandles = () => {
-        navigation.navigate('SignUp');
+    signOut = () => {
+        firebase.auth().signOut().then(() => {
+          this.props.navigation.navigate('SignIn')
+        })
+        .catch(error => this.setState({ errorMessage: error.message }))
     }
+    
+    render() {
+        this.state = { 
+          displayName: firebase.auth().currentUser.displayName,
+          uid: firebase.auth().currentUser.uid
+        }
 
-    return (
-      <View>
-        <Text>Sign in Here</Text>
-        <Button title='Sign IN' onPress={pressHandler} />
-        <Text>Dont have an account, create on here</Text>
-        <Button title='sign up' onPress= { pressHandles } />
-      </View>
-    );
+        return (
+            <View style={styles.container}>
+              <Text style = {styles.textStyle}>
+                Hello, {this.state.displayName}
+              </Text>
+      
+              <Button
+                color="#3740FE"
+                title="Logout"
+                onPress={() => this.signOut()}
+              />
+            </View>
+          );
+        }
+
+
 }
+
+export default Home;
+
+const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      display: "flex",
+      justifyContent: 'center',
+      alignItems: 'center',
+      padding: 35,
+      backgroundColor: '#fff'
+    },
+    textStyle: {
+      fontSize: 15,
+      marginBottom: 20
+    }
+});
