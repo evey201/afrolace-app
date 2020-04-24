@@ -71,7 +71,7 @@ class signIn extends Component {
     
             <Text 
               style={styles.loginText}
-              onPress={() => this.props.navigation.navigate('Signup')}>
+              onPress={() => this.props.navigation.navigate('SignUp')}>
               Don't have account? Click here to signup
             </Text>                          
           </View>
