@@ -18,9 +18,9 @@ class signUp extends Component {
 
 
 updateInputValue = (value, prop) => {
-  this.setState({
-    [prop]: value
-})
+    this.setState({
+      [prop]: value
+  })
 }
 
 signUpUser = () => {
