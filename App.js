@@ -4,6 +4,7 @@ import Home from './screens/homeScreen';
 import Navigator from './routes/homeStack';
 
 export default function App() {
+  console.debug('great')
   return (
     <Navigator style={styles.container} />
   );
