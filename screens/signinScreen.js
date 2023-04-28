@@ -51,13 +51,13 @@ class signIn extends Component {
           <View style={styles.container}>  
             <TextInput
               style={styles.inputStyle}
-              placeholder="Email"
+              placeholder="email"
               value={this.state.email}
               onChangeText={(text) => this.updateInputValue(text, 'email')}
             />
             <TextInput
               style={styles.inputStyle}
-              placeholder="Password"
+              placeholder="password"
               value={this.state.password}
               onChangeText={(text) => this.updateInputValue(text, 'password')}
               maxLength={15}
