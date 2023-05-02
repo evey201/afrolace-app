@@ -5,6 +5,7 @@ import firebase from '../firebase/firebase.utils';
 
 
 class Home extends Component {
+    console.log('here')
     constructor() {
         super();
     
